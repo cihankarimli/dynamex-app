@@ -26,7 +26,7 @@ function Navbar() {
                 src="/dynamexLogo.svg"
                 alt="Dynamex Logo"
                 width={200}
-                height={100}
+                height={50}
               />
             </Link>
           </div>
