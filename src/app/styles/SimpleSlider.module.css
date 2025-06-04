@@ -144,10 +144,6 @@
 
 /* Tablet Styles */
 @media (max-width: 1024px) {
-  .container {
-    padding: 0 10px;
-  }
-
   .swiper {
     height: 500px;
   }
@@ -234,10 +230,6 @@
 
 /* Mobile Portrait */
 @media (max-width: 480px) {
-  .container {
-    padding: 0 5px;
-  }
-
   .swiper {
     height: 450px;
     border-radius: 6px;

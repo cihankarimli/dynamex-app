@@ -4,6 +4,7 @@ import tariffData from "../data/tariffData";
 
 export default function TariffTable({ selectedCountry }) {
   const [activeTab, setActiveTab] = useState("branch");
+
   const currentData = tariffData[selectedCountry]?.[activeTab] || [];
 
   return (
