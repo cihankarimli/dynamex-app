@@ -1,0 +1,145 @@
+.tableContainer {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  background-color: #f7fafc;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.tab {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #718096;
+  border: none;
+}
+
+.activeTab {
+  color: #e53e3e;
+  border-bottom: 2px solid #e53e3e;
+  background-color: white;
+}
+
+.tableWrapper {
+  flex: 1;
+  overflow-y: auto;
+  max-height: 500px;
+  scroll-behavior: smooth;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  width: 8px;
+  scroll-behavior: smooth;
+}
+
+.tableWrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+  scroll-behavior: smooth;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+  scroll-behavior: smooth;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+  scroll-behavior: smooth;
+}
+
+.table {
+  background: white;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.headerCell:last-child {
+  border-right: none;
+}
+
+.headerTitle {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+
+  min-height: 80px;
+  align-items: center;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.weightCell {
+  padding: 1rem;
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.priceCell {
+  padding: 1rem;
+  text-align: center;
+  border-left: 1px solid #f1f3f4;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.categoryLabel {
+  font-size: 0.8rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.price {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .header,
+  .row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .weightCell,
+  .priceCell {
+    border-left: none;
+    border-bottom: 1px solid #f1f3f4;
+    text-align: center;
+  }
+
+  .priceCell:last-child {
+    border-bottom: none;
+  }
+}

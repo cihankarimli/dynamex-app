@@ -1,11 +1,14 @@
-
+import React from 'react';
+import HomePage from './Home/HomePage';
 import './globals.css';
-import Slider from './components/Slider';
+
+
 export default function Home() {
-  
   return (
    <>
-    <Slider/>
+    <HomePage />
+   
    </>
+ 
   );
 }

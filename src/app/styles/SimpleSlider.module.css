@@ -1,11 +1,14 @@
 .container {
   width: 100%;
+  box-sizing: border-box;
 }
 
 .title {
   display: flex;
+  justify-content: center;
   text-align: center;
   margin-bottom: 30px;
+  padding: 0 20px;
 }
 
 .swiper {
@@ -13,9 +16,14 @@
   flex-direction: row;
   height: 600px;
   width: 100%;
+  max-width: 100%;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   background-image: url("/slider_bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
 }
 
 /* Swiper Slides */
@@ -25,6 +33,8 @@
   justify-content: space-around;
   color: white;
   text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .content {
@@ -32,46 +42,65 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
+
 .slideContent {
   max-width: 600px;
+  width: 100%;
   padding: 20px;
   text-align: center;
-  justify-content: start;
+  justify-content: flex-start;
   margin-bottom: 100px;
+  box-sizing: border-box;
 }
+
 .slideContent h2 {
-  font-size: 4.5rem;
-  margin-bottom: 5rem;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 2rem;
   font-weight: 700;
+  line-height: 1.2;
 }
 
 .slideContent p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   opacity: 0.9;
   font-weight: 300;
   margin-bottom: 2rem;
+  line-height: 1.6;
+  max-width: 100%;
 }
 
 .button {
-  display: flex;
-  align-items: start;
-  justify-content: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;
   padding: 14px 50px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   margin-top: 50px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .customPrev,
 .customNext {
   position: absolute;
   top: 50%;
-  transform: translateY(-10%);
-  color: rgba(255, 255, 255, 0.284);
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.7);
   width: 45px;
   height: 45px;
   display: flex;
@@ -80,13 +109,17 @@
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
-  font-size: 30px;
-  transition: background-color 0.3s ease;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .customPrev:hover,
 .customNext:hover {
   background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .customPrev {
@@ -96,10 +129,241 @@
 .customNext {
   right: 15px;
 }
+
 .imageContainer {
   transition: all 0.8s ease;
+  max-width: 100%;
+  height: auto;
 }
 
-.slideContent {
-  transition: all 0.8s ease;
+.imageContainer img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .swiper {
+    height: 500px;
+  }
+
+  .slideContent {
+    max-width: 500px;
+    margin-bottom: 60px;
+  }
+
+  .slideContent h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .button {
+    padding: 12px 40px;
+    margin-top: 30px;
+  }
+
+  .customPrev,
+  .customNext {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .swiper {
+    height: 450px;
+    border-radius: 8px;
+  }
+
+  .slide {
+    padding: 15px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .imageContainer {
+    order: -1;
+    margin-bottom: 20px;
+    max-width: 250px;
+  }
+
+  .slideContent {
+    max-width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .slideContent h2 {
+    margin-bottom: 1rem;
+  }
+
+  .slideContent p {
+    margin-bottom: 1.5rem;
+  }
+
+  .button {
+    padding: 12px 30px;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .customPrev {
+    left: 10px;
+  }
+
+  .customNext {
+    right: 10px;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 5px;
+  }
+
+  .swiper {
+    height: 450px;
+    border-radius: 6px;
+  }
+
+  .slide {
+    padding: 10px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .imageContainer {
+    order: -1;
+    margin-bottom: 15px;
+    max-width: 200px;
+  }
+
+  .slideContent {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .slideContent h2 {
+    margin-bottom: 0.8rem;
+  }
+
+  .slideContent p {
+    margin-bottom: 1rem;
+  }
+
+  .button {
+    padding: 10px 25px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+
+  .customPrev,
+  .customNext {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+
+  .customPrev {
+    left: 8px;
+  }
+
+  .customNext {
+    right: 8px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .swiper {
+    height: 400px;
+  }
+
+  .imageContainer {
+    max-width: 180px;
+    margin-bottom: 10px;
+  }
+
+  .slideContent {
+    padding: 8px;
+  }
+
+  .button {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+
+  .customPrev,
+  .customNext {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .swiper {
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .imageContainer,
+  .slideContent,
+  .button,
+  .customPrev,
+  .customNext {
+    transition: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .swiper {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .customPrev,
+  .customNext {
+    display: none;
+  }
+
+  .swiper {
+    box-shadow: none;
+    background: white;
+  }
+
+  .slideContent {
+    color: black;
+  }
 }

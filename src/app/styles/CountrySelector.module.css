@@ -1,0 +1,45 @@
+.selector {
+  min-width: 200px;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.button {
+  padding: 12px 24px;
+  border: 2px solid #fd475d;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  color: #fd475d;
+}
+
+.active {
+  background-color: #fd475d;
+  color: white;
+}
+
+.inactive {
+  background-color: #fef5e9;
+  color: #e53e3e;
+  border-color: #e53e3e;
+}
+
+.inactive:hover {
+  background-color: #fd475d;
+  color: white;
+}

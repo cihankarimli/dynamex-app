@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import "swiper/css";
@@ -51,13 +51,17 @@ const SimpleSlider = () => {
       <div className={styles.customPrev}>←</div>
       <div className={styles.customNext}>→</div>
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={1}
         navigation={{
           nextEl: `.${styles.customNext}`,
           prevEl: `.${styles.customPrev}`,
         }}
         pagination={{ clickable: true, type: "bullets" }}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         className={styles.swiper}
       >
@@ -88,7 +92,6 @@ const SimpleSlider = () => {
               className={styles.imageContainer}
               initial={{ opacity: 0, x: 170 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
             >
               <div className={styles.imageContainer}>
                 <Image

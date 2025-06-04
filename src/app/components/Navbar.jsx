@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "../styles/Navbar.css";
+import { usePathname } from "next/navigation";
+import { color } from "framer-motion";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +15,10 @@ function Navbar() {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+  const pathname = usePathname();
+  const isActive = (path) => {
+    return pathname === path ? "active" : "";
   };
 
   return (
@@ -34,22 +40,52 @@ function Navbar() {
           {/* Desktop Navigation Links */}
           <ul className="navbar-menu">
             <li>
-              <Link href="/about">Haqqimizda</Link>
+              <Link
+                href="/about"
+                style={isActive("/about") ? { color: "#fd475d" } : {}}
+              >
+                Haqqimizda
+              </Link>
             </li>
             <li>
-              <Link href="/services">Xidmətlər</Link>
+              <Link
+                href="/services"
+                style={isActive("/services") ? { color: "#fd475d" } : {}}
+              >
+                Xidmətlər
+              </Link>
             </li>
             <li>
-              <Link href="/projects">Tariflər</Link>
+              <Link
+                href="/projects"
+                style={isActive("/projects") ? { color: "#fd475d" } : {}}
+              >
+                Tariflər
+              </Link>
             </li>
             <li>
-              <Link href="/blog">Mağazalar</Link>
+              <Link
+                href="/blog"
+                style={isActive("/blog") ? { color: "#fd475d" } : {}}
+              >
+                Mağazalar
+              </Link>
             </li>
             <li>
-              <Link href="/faq">Yeniliklər</Link>
+              <Link
+                href="/faq"
+                style={isActive("/faq") ? { color: "#fd475d" } : {}}
+              >
+                Yeniliklər
+              </Link>
             </li>
             <li>
-              <Link href="/contact">Əlaqə</Link>
+              <Link
+                href="/contact"
+                style={isActive("/contact") ? { color: "#fd475d" } : {}}
+              >
+                Əlaqə
+              </Link>
             </li>
           </ul>
 
