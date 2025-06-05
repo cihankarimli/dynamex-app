@@ -52,6 +52,17 @@
 .footer-logo {
   margin-bottom: 20px;
 }
+.contact-text span {
+  cursor: pointer;
+}
+.arrow-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+.arrow-icon.rotate {
+  transform: rotate(90deg);
+}
 
 .logo-image {
   filter: brightness(0) invert(1);

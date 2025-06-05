@@ -1,15 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "../styles/FooterDynamex.css";
 
 function FooterDynamex() {
+  const [dropdown, setdropdown] = useState(false);
+  function dropdownPage() {
+    setdropdown(!dropdown);
+  }
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-content">
-          {/* Logo and Copyright Section */}
           <div className="footer-brand">
             <div className="footer-logo">
               <Link href="/">
@@ -112,27 +115,53 @@ function FooterDynamex() {
                   </svg>
                 </div>
                 <div className="contact-text">
-                  <p>28 may, Dəmir yolu vaqzalı 2-ci mərtəbə AZ 1020</p>
-                  <p>Gəncə ş., AZ 2013 Kapaz r-nu, N.Nərimanov pr, 42C</p>
-                  <p>Sumqayıt ş.H.Əliyev pr.493-503.14 mərtəbənin yanı.</p>
-                  <p>Xaiqlar Dostluğu.İsmayıl Məmmədov küçəsi 6/42114A</p>
-                  <p>Yasamal.Abbas Mirzə Şərifzadə 440M</p>
-                  <p>Xırdalan ş. H. Əliyev pr. 11, Kristal Abşeron 2</p>
-                  <p>əhmədi Ukrayna dairəsi, Gəncə pr, Vurğun Tau küç 2</p>
-                  <p>Bakıxanov qəs., S. Qocayev küç , AZ1132-in yanı</p>
-                  <p>20 yanvar, Məmməd Cəfər Cəfərov</p>
-                  <p>
-                    Nərimanov KOB evi Ziya Bünyadov 38C KOB Evi 2 Mərtəbə 91
-                    Pəncərə
-                  </p>
-                  <p>
-                    Nərimanov Goex Təhvil məntəqəsi.N.Nərimanov, əhməd Rəcəbli
-                    4/6
-                  </p>
-                  <p>
-                    Elmlər Akademiyası Skybox Təhvil məntəqəsi.Yasamal rayonu.
-                    Şəfayət Mehdiyev küçəsi 16B
-                  </p>
+                  <span className="" onClick={dropdownPage}>
+                    Unvanlar
+                    <span className={`arrow-icon ${dropdown ? "rotate" : ""}`}>
+                      {" "}
+                      <svg
+                        width="20"
+                        height="17"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M9 18L15 12L9 6"
+                          stroke="white"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                  {dropdown ? (
+                    <div>
+                      <p>28 may Dəmir yolu vaqzalı 2-ci mərtəbə AZ 1020</p>
+                      <span>Gəncə ş.</span>
+                      <p>, AZ 2013 Kapaz r-nu, N.Nərimanov pr, 42C</p>
+                      <p>Sumqayıt ş.H.Əliyev pr.493-503.14 mərtəbənin yanı.</p>
+                      <p>Xaiqlar Dostluğu.İsmayıl Məmmədov küçəsi 6/42114A</p>
+                      <p>Yasamal.Abbas Mirzə Şərifzadə 440M</p>
+                      <p>Xırdalan ş. H. Əliyev pr. 11, Kristal Abşeron 2</p>
+                      <p>əhmədi Ukrayna dairəsi, Gəncə pr, Vurğun Tau küç 2</p>
+                      <p>Bakıxanov qəs., S. Qocayev küç , AZ1132-in yanı</p>
+                      <p>20 yanvar, Məmməd Cəfər Cəfərov</p>
+                      <p>
+                        Nərimanov KOB evi Ziya Bünyadov 38C KOB Evi 2 Mərtəbə 91
+                        Pəncərə
+                      </p>
+                      <p>
+                        Nərimanov Goex Təhvil məntəqəsi.N.Nərimanov, əhməd
+                        Rəcəbli 4/6
+                      </p>
+                      <p>
+                        Elmlər Akademiyası Skybox Təhvil məntəqəsi.Yasamal
+                        rayonu. Şəfayət Mehdiyev küçəsi 16B
+                      </p>
+                    </div>
+                  ) : null}
                 </div>
               </div>
 
