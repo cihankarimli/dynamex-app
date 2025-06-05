@@ -1,0 +1,751 @@
+/* Desktop-to-Mobile Responsive CSS for YouTube Section */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "SegoeUI", sans-serif;
+}
+
+/* Desktop First - Base Styles (1200px+) */
+.youtube-section {
+  background-color: white;
+  min-height: 600px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.youtube-container {
+  background-color: #f1f1f1;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header Styles */
+.youtube-header {
+  background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
+  color: white;
+  padding: 25px 40px;
+  border-radius: 25px 25px 0 0;
+  margin-bottom: 0;
+  position: relative;
+  box-shadow: 0 4px 25px rgba(255, 71, 87, 0.25);
+}
+
+.youtube-header::before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.youtube-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  padding-left: 35px;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+
+/* Content Container */
+.youtube-content {
+  background: #f1f1f1;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Decorations */
+.youtube-content::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, #ff4757, #ff6b7a);
+  border-radius: 50%;
+  opacity: 0.05;
+}
+
+.youtube-content::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(45deg, #ff4757, #ff6b7a);
+  border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+  opacity: 0.05;
+}
+
+/* Slider Container */
+.youtube-slider-container {
+  position: relative;
+  z-index: 2;
+}
+
+.youtube-swiper {
+  padding: 10px 0 50px;
+  overflow: visible;
+}
+
+/* YouTube Cards */
+.youtube-card {
+  overflow: hidden;
+  height: 270px;
+  padding: 0 5px;
+  width: 343px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.youtube-card:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.card-content {
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-image {
+  position: relative;
+  margin-bottom: 20px;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 330px;
+}
+
+.youtube-thumbnail {
+  border-radius: 12px;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.play-button {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.youtube-card:hover .play-button {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.youtube-card h3 {
+  font-size: 18px;
+  font-family: "SegoeSemiBold", sans-serif;
+  font-weight: 600;
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: left;
+  margin-bottom: 9px;
+  color: #2c2c51;
+  transition: 0.2s ease;
+  margin-top: 15px;
+  margin-bottom: 0;
+  padding: 0 10px;
+}
+
+.youtube-card p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 10px 0 0 0;
+  line-height: 1.5;
+  padding: 0 10px;
+}
+
+/* Custom Navigation */
+.slider-navigation {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  width: 45px;
+  height: 45px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #ff4757;
+  background-color: #ff4757;
+  pointer-events: all;
+  opacity: 0.8;
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  opacity: 60%;
+}
+
+/* Custom Pagination */
+.swiper-pagination-custom {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.swiper-pagination-custom .swiper-pagination-bullet-active {
+  background: #ff4757;
+  transform: scale(1.3);
+}
+
+/* Large Desktop (1400px+) */
+@media (min-width: 1400px) {
+  .youtube-section {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .youtube-container {
+    margin: 0 140px;
+  }
+}
+
+/* Standard Desktop (1024px - 1199px) */
+@media (max-width: 1199px) {
+  .youtube-section {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .youtube-container {
+    margin: 0 100px;
+  }
+
+  .youtube-header {
+    padding: 24px 35px;
+    border-radius: 22px 22px 0 0;
+  }
+
+  .youtube-header h2 {
+    font-size: 21px;
+    padding-left: 32px;
+  }
+
+  .youtube-header::before {
+    width: 15px;
+    height: 15px;
+    left: 22px;
+  }
+
+  .youtube-content {
+    padding: 45px 35px 55px;
+    border-radius: 0 0 22px 22px;
+  }
+
+  .youtube-content::before {
+    width: 180px;
+    height: 180px;
+    top: -90px;
+    right: -90px;
+    opacity: 0.04;
+  }
+
+  .youtube-content::after {
+    width: 140px;
+    height: 140px;
+    bottom: -70px;
+    left: -70px;
+    opacity: 0.04;
+  }
+
+  .youtube-card {
+    height: 250px;
+    width: 300px;
+  }
+
+  .youtube-card h3 {
+    font-size: 17px;
+  }
+
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* Tablet Landscape (768px - 1023px) */
+@media (max-width: 1023px) {
+  .youtube-section {
+    padding: 60px 40px;
+    min-height: 500px;
+  }
+
+  .youtube-container {
+    margin: 0 60px;
+  }
+
+  .youtube-header {
+    padding: 22px 30px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .youtube-header h2 {
+    font-size: 20px;
+    padding-left: 30px;
+  }
+
+  .youtube-header::before {
+    width: 14px;
+    height: 14px;
+    left: 20px;
+  }
+
+  .youtube-content {
+    margin-top: 100px;
+    padding: 40px 30px 50px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .youtube-content::before {
+    width: 160px;
+    height: 160px;
+    top: -80px;
+    right: -80px;
+    opacity: 0.03;
+  }
+
+  .youtube-content::after {
+    width: 120px;
+    height: 120px;
+    bottom: -60px;
+    left: -60px;
+    opacity: 0.03;
+  }
+
+  .youtube-swiper {
+    padding: 10px 0 40px;
+  }
+
+  .youtube-card {
+    height: 230px;
+    width: 280px;
+    padding: 0 3px;
+  }
+
+  .youtube-card h3 {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+
+  .card-image {
+    margin-bottom: 15px;
+    border-radius: 10px;
+  }
+
+  .youtube-thumbnail {
+    border-radius: 10px;
+  }
+
+  .play-button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .play-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 40px;
+    height: 40px;
+  }
+
+  .swiper-button-prev-custom svg,
+  .swiper-button-next-custom svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .swiper-pagination-custom {
+    margin-top: 25px;
+  }
+
+  .swiper-pagination-custom .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+  }
+}
+
+/* Tablet Portrait (640px - 767px) */
+@media (max-width: 767px) {
+  .youtube-section {
+    padding: 50px 30px;
+    min-height: 450px;
+  }
+
+  .youtube-container {
+    margin: 0 30px;
+  }
+
+  .youtube-header {
+    padding: 20px 25px;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .youtube-header h2 {
+    font-size: 19px;
+    padding-left: 28px;
+  }
+
+  .youtube-header::before {
+    width: 13px;
+    height: 13px;
+    left: 18px;
+  }
+
+  .youtube-content {
+    padding: 35px 25px 45px;
+    border-radius: 0 0 18px 18px;
+  }
+
+  /* Hide background decorations on smaller tablets */
+  .youtube-content::before,
+  .youtube-content::after {
+    display: none;
+  }
+
+  .youtube-swiper {
+    padding: 10px 0 35px;
+  }
+
+  .youtube-card {
+    height: 200px;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+
+  .youtube-card:hover {
+    transform: none;
+  }
+
+  .youtube-card h3 {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 15px;
+  }
+
+  .card-image {
+    margin-bottom: 12px;
+    max-width: 250px;
+    border-radius: 8px;
+  }
+
+  .youtube-thumbnail {
+    border-radius: 8px;
+  }
+
+  .play-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .play-button svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Hide navigation arrows on tablets */
+  .slider-navigation {
+    display: none;
+  }
+
+  .swiper-pagination-custom .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    margin: 0 4px;
+  }
+}
+
+/* Large Mobile (480px - 639px) */
+@media (max-width: 639px) {
+  .youtube-section {
+    padding: 40px 20px;
+    min-height: 400px;
+  }
+
+  .youtube-container {
+    margin: 0 15px;
+  }
+
+  .youtube-header {
+    padding: 18px 22px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .youtube-header h2 {
+    font-size: 18px;
+    padding-left: 26px;
+    letter-spacing: 0.2px;
+  }
+
+  .youtube-header::before {
+    width: 12px;
+    height: 12px;
+    left: 16px;
+  }
+
+  .youtube-content {
+    padding: 30px 20px 40px;
+    border-radius: 0 0 16px 16px;
+  }
+
+  .youtube-swiper {
+    padding: 10px 0 30px;
+  }
+
+  .youtube-card {
+    height: 180px;
+    margin-bottom: 12px;
+  }
+
+  .youtube-card h3 {
+    font-size: 14px;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .youtube-card p {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  .card-image {
+    margin-bottom: 10px;
+    max-width: 220px;
+  }
+
+  .play-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .play-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .swiper-pagination-custom {
+    margin-top: 20px;
+  }
+
+  .swiper-pagination-custom .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+  }
+}
+
+/* Small Mobile (320px - 479px) */
+@media (max-width: 479px) {
+  .youtube-section {
+    padding: 30px 15px;
+    min-height: 350px;
+  }
+
+  .youtube-container {
+    margin: 0 10px;
+  }
+
+  .youtube-header {
+    padding: 15px 20px;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .youtube-header h2 {
+    font-size: 16px;
+    padding-left: 24px;
+    letter-spacing: 0.1px;
+  }
+
+  .youtube-header::before {
+    width: 11px;
+    height: 11px;
+    left: 14px;
+  }
+
+  .youtube-content {
+    padding: 25px 15px 35px;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .youtube-swiper {
+    padding: 8px 0 25px;
+  }
+
+  .youtube-card {
+    height: 160px;
+    margin-bottom: 10px;
+  }
+
+  .youtube-card h3 {
+    font-size: 13px;
+    margin-top: 6px;
+    padding: 0 10px;
+    line-height: 1.3;
+  }
+
+  .youtube-card p {
+    font-size: 11px;
+    margin-top: 4px;
+    padding: 0 10px;
+  }
+
+  .card-image {
+    margin-bottom: 8px;
+    max-width: 200px;
+    border-radius: 6px;
+  }
+
+  .youtube-thumbnail {
+    border-radius: 6px;
+  }
+
+  .play-button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .play-button svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .swiper-pagination-custom {
+    margin-top: 18px;
+  }
+
+  .swiper-pagination-custom .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    margin: 0 2px;
+  }
+
+  .swiper-pagination-custom .swiper-pagination-bullet-active {
+    transform: scale(1.2);
+  }
+}
+
+/* Extra Small Mobile (Below 320px) */
+@media (max-width: 319px) {
+  .youtube-section {
+    padding: 25px 10px;
+  }
+
+  .youtube-container {
+    margin: 0 5px;
+  }
+
+  .youtube-header {
+    padding: 12px 15px;
+  }
+
+  .youtube-header h2 {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+
+  .youtube-header::before {
+    width: 10px;
+    height: 10px;
+    left: 12px;
+  }
+
+  .youtube-content {
+    padding: 20px 12px 30px;
+  }
+
+  .youtube-card {
+    height: 140px;
+  }
+
+  .youtube-card h3 {
+    font-size: 12px;
+    padding: 0 8px;
+  }
+
+  .card-image {
+    max-width: 180px;
+  }
+
+  .play-button {
+    width: 24px;
+    height: 24px;
+  }
+
+  .play-button svg {
+    width: 12px;
+    height: 12px;
+  }
+}

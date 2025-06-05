@@ -3,6 +3,8 @@ import Slider from "../components/Slider";
 import HowWork from "../components/HowWork";
 import Tarrifs from "../section/Tarrifs";
 import NewsSection from "../section/NewsSection";
+import YoutubeSection from "../section/YoutubeSection";
+import BrandCarousel from "../section/BrandCarousel";
 function HomePage() {
   return (
     <>
@@ -10,6 +12,8 @@ function HomePage() {
       <HowWork />
       <Tarrifs />
       <NewsSection />
+      <YoutubeSection />
+      <BrandCarousel />
     </>
   );
 }
