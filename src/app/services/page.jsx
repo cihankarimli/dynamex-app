@@ -1,5 +1,6 @@
 import React from "react";
 import ServicesCard from "../components/ServicesCard";
+import "../styles/ServicesPage.css";
 
 function page() {
   return (

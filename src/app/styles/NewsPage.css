@@ -1,0 +1,177 @@
+/* News Page Styles */
+.headline {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 40px;
+  text-align: center;
+}
+
+.headline h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.headline p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+.newsMain {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Filter Styles */
+.filter {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: right;
+}
+
+.filter select {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  min-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.filter select:hover {
+  border-color: #007bff;
+}
+
+.filter select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Card Container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.card {
+  background: white;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 7px;
+}
+
+.card:hover img {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 20px 20px 10px;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card p {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0 20px 20px;
+  font-weight: 500;
+}
+
+/* Loading Styles */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .headline {
+    padding: 40px 15px 30px;
+  }
+
+  .headline h1 {
+    font-size: 2rem;
+  }
+
+  .headline p {
+    font-size: 1rem;
+  }
+
+  .newsMain {
+    padding: 0 15px;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .filter select {
+    min-width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .headline h1 {
+    font-size: 1.75rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Additional Professional Touches */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card {
+  position: relative;
+}
+
+/* Smooth animations */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
