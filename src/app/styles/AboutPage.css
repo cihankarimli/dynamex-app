@@ -37,16 +37,27 @@
 }
 
 .about-image img {
+  position: relative;
   width: 100%;
   max-width: 825px;
   height: auto;
   display: block;
   margin: 0 auto;
   border-radius: 0;
+  z-index: 2;
 }
 
 .ping-card {
-  display: none;
+  position: absolute;
+  right: 70px;
+  top: 100px;
+  width: 255px;
+  height: 340px;
+  opacity: 0.2;
+  border-radius: 10px;
+  background-color: #fd475d;
+  content: "";
+  z-index: 1;
 }
 
 .text {
@@ -95,6 +106,9 @@
 
   .text .headline {
     font-size: 1.9rem;
+  }
+  .ping-card {
+    display: none;
   }
 }
 

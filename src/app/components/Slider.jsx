@@ -7,44 +7,11 @@ import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import SlidesData from "../data/SlidesData";
 
 import styles from "../styles/SimpleSlider.module.css";
 
 const SimpleSlider = () => {
-  const slides = [
-    {
-      id: 1,
-      title: "Welcome to Dynamex",
-      content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      bgClass: "slide1",
-      image: "/dynamexLogo.svg",
-      buttonContent: "Ətrafli",
-    },
-    {
-      id: 2,
-      title: "Fast and Reliable",
-      content: "We ensure your packages are delivered on time, every time.",
-      bgClass: "slide2",
-      image: "/dynamexLogo.svg",
-      buttonContent: "Ətrafli",
-    },
-    {
-      id: 3,
-      title: "Global Reach",
-      content: "Connecting you to the world with our extensive network.",
-      bgClass: "slide3",
-      image: "/dynamexLogo.svg",
-      buttonContent: "Ətrafli",
-    },
-    {
-      id: 4,
-      title: "Customer Support",
-      content: "Our team is here to assist you 24/7 with any inquiries.",
-      bgClass: "slide4",
-      image: "/dynamexLogo.svg",
-      buttonContent: "Ətrafli",
-    },
-  ];
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className={styles.container}>
@@ -65,7 +32,7 @@ const SimpleSlider = () => {
         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
         className={styles.swiper}
       >
-        {slides.map((slide) => (
+        {SlidesData.map((slide) => (
           <SwiperSlide
             key={slide.id}
             className={`${styles.slide} ${styles[slide.bgClass]}`}
