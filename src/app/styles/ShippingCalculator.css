@@ -1,0 +1,198 @@
+.shipping-calculator-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.shipping-calculator-form-panel {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  list-style-type: none;
+  border: 0;
+}
+
+.shipping-calculator-info-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+
+  height: fit-content;
+}
+
+.shipping-calculator-form-group {
+  margin-bottom: 24px;
+}
+
+.shipping-calculator-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+  background-image: url("/calc_circle.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.shipping-calculator-form-row .shipping-calculator-form-group {
+  margin-bottom: 0;
+}
+
+.shipping-calculator-label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.shipping-calculator-select-wrapper {
+  position: relative;
+}
+
+.shipping-calculator-select {
+  width: 100%;
+  padding: 12px 40px 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  font-size: 14px;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.shipping-calculator-select:focus {
+  border-color: #ff4757;
+}
+
+.shipping-calculator-select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.shipping-calculator-input-group {
+  display: flex;
+}
+
+.shipping-calculator-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.shipping-calculator-input:focus {
+  border-color: #ff4757;
+}
+
+.shipping-calculator-input-unit {
+  padding: 12px 16px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 0 8px 8px 0;
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.shipping-calculator-weight-input {
+  display: flex;
+}
+
+.shipping-calculator-weight-input .shipping-calculator-input {
+  flex: 1;
+  border-radius: 8px 0 0 8px;
+}
+
+.shipping-calculator-weight-input .shipping-calculator-select-wrapper {
+  width: 80px;
+}
+
+.shipping-calculator-weight-input .shipping-calculator-select {
+  border-left: none;
+  border-radius: 0 8px 8px 0;
+  padding-right: 30px;
+}
+
+.shipping-calculator-calculate-btn {
+  width: 100%;
+  padding: 16px;
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 20px;
+}
+
+.shipping-calculator-calculate-btn:hover {
+  background: #ff3742;
+}
+
+.shipping-calculator-price-display {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.shipping-calculator-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.shipping-calculator-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .shipping-calculator-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .shipping-calculator-form-panel,
+  .shipping-calculator-info-panel {
+    padding: 20px;
+  }
+
+  .shipping-calculator-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .shipping-calculator-form-row .shipping-calculator-form-group {
+    margin-bottom: 24px;
+  }
+}

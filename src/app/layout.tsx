@@ -32,6 +32,6 @@ export default function RootLayout({
     {children}
     <FooterDynamex/>
     </body>
-    </html>
+    </html >
   );
 }
