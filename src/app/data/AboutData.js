@@ -40,4 +40,4 @@ const aboutData = [
       "Operativ “Mənim üçün Sifariş Et” xidməti və fasiləsiz işləyən anbarımız, peşəkar müştəri xidmətlərimiz, rahat və zəngin interfeysli veb saytımızla xidmətinizdəyik!",
   },
 ];
-export { aboutData as default };
+export default aboutData;

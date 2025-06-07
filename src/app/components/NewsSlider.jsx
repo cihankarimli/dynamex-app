@@ -1,7 +1,7 @@
 "use client";
 import styles from "../styles/NewsSection.module.css";
 import React from "react";
-import NewsData from "../data/News";
+import News from "../data/News";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -35,7 +35,7 @@ function NewsSlider() {
           },
         }}
       >
-        {NewsData.map((news) => (
+        {News.map((news) => (
           <SwiperSlide key={news.id}>
             <motion.div
               className={styles.slideContent}
