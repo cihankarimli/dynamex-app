@@ -13,7 +13,12 @@ export default function Loading() {
     >
       <div className="spinner"></div>
       <div className="loading-logo">
-        <Image src="dynamexLogo.svg" width={200} height={200} />
+        <Image
+          src="dynamexLogo.svg"
+          width={200}
+          height={200}
+          alt="Loading-image"
+        />
       </div>
     </div>
   );

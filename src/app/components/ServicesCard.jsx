@@ -5,9 +5,9 @@ import Image from "next/image";
 function ServicesCard() {
   return (
     <div className="card-container">
-      {ServicesData.map((card, index) => (
-        <div className="card">
-          <div className="card-image" key={card.id}>
+      {ServicesData.map((card) => (
+        <div key={card.id} className="card">
+          <div className="card-image">
             <Image src={card.image} alt={card.title} width={70} height={70} />
           </div>
           <div className="card-content">

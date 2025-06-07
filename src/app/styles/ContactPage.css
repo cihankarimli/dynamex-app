@@ -1,10 +1,10 @@
 /* Contact Page Styles */
+
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 20px;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  font-family: "Segoe UI ", sans-serif;
   min-height: 100vh;
 }
 
@@ -14,14 +14,11 @@
 }
 
 .head-line {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #1e293b;
+  font-size: 2.5rem;
+  color: #2c2c51;
   margin-bottom: 24px;
   text-align: center;
-  background: linear-gradient(135deg, #3b82f6, #1e40af);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: #2c2c51;
   background-clip: text;
 }
 
@@ -73,7 +70,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23475569' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+
   background-position: right 16px center;
   background-repeat: no-repeat;
   background-size: 18px;
@@ -93,16 +90,6 @@
   background: #fff;
 }
 
-.contact-info {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  min-height: 280px;
-}
-
 .city-details {
   display: flex;
   flex-direction: column;
@@ -119,12 +106,6 @@
   border-left: 5px solid #3b82f6;
   transition: all 0.4s ease;
   backdrop-filter: blur(5px);
-}
-
-.detail-item:hover {
-  background: rgba(239, 246, 255, 0.9);
-  transform: translateX(8px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
 }
 
 .detail-item strong {
@@ -212,7 +193,7 @@
   }
 
   .contact-select,
-  .contact-info {
+  .info {
     padding: 28px;
   }
 
@@ -234,7 +215,7 @@
   }
 
   .contact-select,
-  .contact-info {
+  .info {
     padding: 20px;
   }
 
@@ -289,12 +270,12 @@
 
 /* Glassmorphism effect enhancement */
 .contact-select,
-.contact-info {
+.info {
   position: relative;
 }
 
 .contact-select::before,
-.contact-info::before {
+.info::before {
   content: "";
   position: absolute;
   top: 0;

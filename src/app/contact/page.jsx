@@ -36,7 +36,7 @@ function page() {
                 ))}
               </select>
             </div>
-            <div className="contact-info">
+            <div className="info">
               {selectedCity && (
                 <div className="city-details">
                   <div className="detail-item">
