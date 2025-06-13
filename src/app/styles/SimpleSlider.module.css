@@ -61,8 +61,7 @@
 }
 
 .slideContent h2 {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  margin-bottom: 2rem;
+  margin: 0;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -71,7 +70,6 @@
   font-size: clamp(1rem, 2vw, 1.2rem);
   opacity: 0.9;
   font-weight: 300;
-  margin-bottom: 2rem;
   line-height: 1.6;
   max-width: 100%;
 }
@@ -144,6 +142,7 @@
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  margin: 0;
 }
 
 /* Tablet Styles */
@@ -176,10 +175,6 @@
 
 /* Mobile Landscape */
 @media (max-width: 768px) {
-  .title {
-    margin-bottom: 20px;
-  }
-
   .swiper {
     height: 450px;
     border-radius: 8px;
@@ -205,16 +200,12 @@
 
   .slideContent {
     max-width: 100%;
-    padding: 15px;
+
     margin-bottom: 20px;
   }
 
-  .slideContent h2 {
+  .slideContent h3 {
     margin-bottom: 1rem;
-  }
-
-  .slideContent p {
-    margin-bottom: 1.5rem;
   }
 
   .button {
