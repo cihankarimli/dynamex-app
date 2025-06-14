@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import AboutData from "../data/AboutData";
+import aboutData from "../data/AboutData";
 import styles from "../styles/AboutPage.css";
 
 function About() {
@@ -23,7 +23,7 @@ function About() {
         </div>
         <div className="text">
           <h3 className="headline">13 il öncə başlayan hekayəmiz...</h3>
-          {AboutData.map((about) => (
+          {aboutData.map((about) => (
             <div className="content" key={about.id}>
               <p>{about.title}</p>
             </div>
