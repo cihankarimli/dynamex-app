@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  min-height: 100vh;
+}
+
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 3%;
+  color: #2c2c51;
+}
+
+.title h1 {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 0.5%;
+  color: #2c2c51;
+}
+
+.title p {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.login-form-container {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 85%;
+  width: 100%;
+  min-height: 50vh;
+}
+
+.login-input {
+  flex: 1;
+  padding: 4% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-input h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  color: #2d3748;
+  margin-bottom: 3%;
+  text-align: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-container {
+  margin-bottom: 2%;
+  position: relative;
+}
+
+.input-container label {
+  display: none; /* Gizli label */
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px 16px;
+  padding-right: 45px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  height: 44px;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: #fd475d;
+  box-shadow: 0 0 0 2px rgba(253, 71, 93, 0.1);
+  background-color: #ffffff;
+}
+
+.input-container input::placeholder {
+  color: #a0aec0;
+  font-size: 14px;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Checkbox styling */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  gap: 8px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #00d4aa;
+}
+
+.checkbox-container label {
+  font-size: 13px;
+  color: #4a5568;
+  margin: 0;
+  display: block !important;
+}
+
+.login-button {
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+  background-color: #fd475d;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.login-button:hover {
+  background-color: #e63946;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(253, 71, 93, 0.3);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* Forgot password link */
+.forgot-password {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.forgot-password a {
+  color: #3182ce;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Right side with illustration */
+.register-button-row {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  position: relative;
+  color: white;
+}
+
+.register-button-row img {
+  max-width: 280px;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+.register-btn {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.register-btn span:first-child {
+  font-size: 14px;
+  color: #4a5568;
+}
+.register-link {
+  color: #3182ce;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-btn span:last-child {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3182ce;
+  cursor: pointer;
+  text-decoration: none;
+}
+.register-btn span:last-child:hover {
+  text-decoration: underline;
+}
+
+.register-btn span:last-child:hover {
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 760px) {
+  .login-form-container {
+    flex-direction: column;
+    max-width: 95%;
+  }
+  .title {
+    display: none;
+  }
+
+  .register-button-row {
+    min-height: 200px;
+  }
+
+  .register-button-row img {
+    display: none;
+    padding: 0;
+  }
+  .register-btn {
+    padding: 0;
+    margin-bottom: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-input {
+    padding: 25px 20px;
+    width: 100%;
+  }
+  .register-button-row img {
+    display: none;
+  }
+  .input-container input {
+    width: 100%;
+    height: 40px;
+    padding: 10px 14px;
+    padding-right: 40px;
+    font-size: 13px;
+  }
+
+  .login-button {
+    height: 40px;
+    font-size: 13px;
+  }
+  .register-btn {
+    padding: 0;
+    min-height: 180px;
+    flex-direction: column;
+  }
+
+  .title h1 {
+    font-size: 1.4rem;
+  }
+
+  .title p {
+    font-size: 0.9rem;
+  }
+
+  .register-button-row img {
+    display: none;
+  }
+}
+
+.input-container input:valid {
+  border-color: #00d4aa;
+}
+
+.input-container input:invalid:not(:placeholder-shown) {
+  border-color: #e53e3e;
+}
+
+.login-form-container {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-container input:focus + .input-container::after {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .input-container {
+    margin-bottom: 15px;
+  }
+
+  .checkbox-container {
+    margin: 12px 0;
+  }
+  .register-button-row image {
+    display: none;
+  }
+  .login-button {
+    margin-top: 12px;
+  }
+
+  .forgot-password {
+    margin-top: 12px;
+  }
+}

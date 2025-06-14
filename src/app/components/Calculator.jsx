@@ -20,7 +20,7 @@ const ShippingCalculator = () => {
     setcount(number.toFixed(2));
   }
 
-  let Azn = count / 1.7;
+  let Azn = count * 1.7;
   Azn = Azn.toFixed(2);
   return (
     <div className="shipping-calculator-container">

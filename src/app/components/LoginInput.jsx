@@ -6,7 +6,7 @@ function LoginInput() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, touchedFields },
   } = useForm();
 
   const onSubmit = (data) => console.log(data);
@@ -19,8 +19,15 @@ function LoginInput() {
             <div className="input-container" key={item.id}>
               <label htmlFor={item.name}>{item.label}</label>
               <input
-                type="text"
+                type={item.type}
                 id={item.name}
+                style={{
+                  backgroundColor:
+                    touchedFields[item.name] && !errors[item.name]
+                      ? "#E8F0FE"
+                      : "white",
+                  borderColor: errors[item.name] ? "red" : "black",
+                }}
                 placeholder={item.placeHolder}
                 {...register(item.name, {
                   required: item.required || false,
