@@ -62,6 +62,12 @@ body {
   display: flex;
   gap: 20px;
 }
+.card-image {
+  flex: 0 0 100px;
+  height: 100px;
+  border-radius: 7px;
+  overflow: hidden;
+}
 
 /* Card Content - Orijinal Stil */
 .card-content h5 {
