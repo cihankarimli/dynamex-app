@@ -34,7 +34,6 @@ const ShippingCalculator = () => {
   return (
     <div className="shipping-calculator-container">
       <div className="shipping-calculator-form-panel">
-        {/* Country Selection */}
         <div className="shipping-calculator-form-group">
           <label className="shipping-calculator-label">Ölkə</label>
           <div className="shipping-calculator-select-wrapper">

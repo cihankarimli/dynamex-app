@@ -1,5 +1,3 @@
-import { type } from "os";
-
 const loginData = [
   {
     id: 1,
