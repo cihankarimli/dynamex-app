@@ -5,7 +5,7 @@ const loginData = [
     label: "Email",
     placeHolder: "Email",
     name: "email",
-    required: true, // boolean
+    required: false, // boolean
     pattern: "[^\\s@]+@[^\\s@]+\\.[^\\s@]+", // string format
     message: "Düzgün email daxil edin",
   },
@@ -15,7 +15,7 @@ const loginData = [
     label: "Parol",
     placeHolder: "Şifrə",
     name: "password",
-    required: true,
+    required: false,
     pattern: "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", // string format
     message: "Parol ən azı 8 simvol, bir hərf və bir rəqəm olmalıdır",
   },
