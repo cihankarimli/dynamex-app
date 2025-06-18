@@ -1,40 +1,38 @@
-import React from "react";
-import LoginInput from "../components/LoginInput";
+import LoginInput from "../components/LoginInput.jsx";
 import Image from "next/image";
 import Link from "next/link";
-import "../styles/Login.css"; // Ensure you have the correct path to your CSS file
+import "../styles/Login.css";
 
-function page() {
+export default function Page() {
   return (
-    <>
-      <div className="form-container">
-        <div className="title">
-          <h1>Dynamex-ə xoş gəlmişsiniz !</h1>
-          <p>Dynamex-ə xoş gəlmişsiniz !</p>
+    <div className="form-container">
+      <div className="title">
+        <h1>Dynamex-ə xoş gəlmişsiniz!</h1>
+        <p>Dynamex platformasına daxil olun</p>
+      </div>
+
+      <div className="login-form-container">
+        <div className="login-input">
+          <h3>Daxil Ol</h3>
+          <LoginInput />
         </div>
-        <div className="login-form-container">
-          <div className="login-input">
-            <h3>Daxil Ol</h3>
-            <LoginInput />
-          </div>
-          <div className="register-button-row">
-            <Image
-              src="/login_right.svg"
-              width={314}
-              height={313}
-              alt="register-img"
-            />
-            <div className="register-btn">
-              <span>Hesabınız yoxdur?</span>
-              <Link href="/register" className="register-link">
-                <span>Qeydiyyatdan keç</span>
-              </Link>
-            </div>
+
+        <div className="register-button-row">
+          <Image
+            src="/login_right.svg"
+            width={314}
+            height={313}
+            alt="Qeydiyyat şəkli"
+            priority
+          />
+          <div className="register-btn">
+            <span>Hesabınız yoxdur?</span>
+            <Link href="/register" className="register-link">
+              Qeydiyyatdan keç
+            </Link>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
-
-export default page;
