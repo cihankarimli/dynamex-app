@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/ShippingCalculator.css";
 import useCounterAnimation from "../hooks/CounterAnimation";
 
@@ -118,7 +118,6 @@ const ShippingCalculator = () => {
           </div>
         </div>
 
-        {/* Calculate Button */}
         <button
           type="submit"
           className={`shipping-calculator-calculate-btn ${
@@ -130,7 +129,6 @@ const ShippingCalculator = () => {
           {isAnimating ? "Hesablanır..." : "Hesabla"}
         </button>
 
-        {/* Animated Price Display */}
         <div
           className={`shipping-calculator-price-display ${
             isAnimating ? "animating" : ""
@@ -142,7 +140,6 @@ const ShippingCalculator = () => {
         </div>
       </div>
 
-      {/* Right Panel - Calculator Info */}
       <div className="shipping-calculator-info-panel">
         <h2 className="shipping-calculator-title">Kalkulyator</h2>
         <p className="shipping-calculator-description">

@@ -1,5 +1,7 @@
 .selector {
   min-width: 200px;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -42,4 +44,18 @@
 .inactive:hover {
   background-color: #fd475d;
   color: white;
+}
+@media (max-width: 768px) {
+  .selector {
+    min-width: 100%;
+  }
+
+  .title {
+    font-size: 1.125rem;
+  }
+
+  .button {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
 }

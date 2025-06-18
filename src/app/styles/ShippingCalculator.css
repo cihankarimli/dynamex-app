@@ -177,9 +177,8 @@
 
 @media (max-width: 768px) {
   .shipping-calculator-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 15px;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .shipping-calculator-form-panel,
