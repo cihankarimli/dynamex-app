@@ -5,7 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2%;
+  padding: 0 19%;
+  gap: 20px;
 }
 
 .title {
@@ -36,11 +37,13 @@
   width: 100%;
   min-height: 50vh;
   animation: slideUp 0.5s ease-out;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
 }
 
 .login-input {
   flex: 1;
-  padding: 4% 5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,15 +51,21 @@
 }
 
 .login-input h3 {
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-size: large;
   color: #2d3748;
   margin-bottom: 3%;
   text-align: center;
 }
 
-.form-input {
+.login-input {
   width: 100%;
   max-width: 400px;
+}
+.login-input input {
+  padding: 10px 3px;
+  width: 100%;
+  border-radius: 7px;
+  border: 1px solid #e2e8f0;
 }
 
 .login-container {
@@ -103,7 +112,6 @@
 .input-container input:invalid:not(:placeholder-shown) {
   border-color: #e53e3e;
 }
-
 .error-message {
   color: #e53e3e;
   font-size: 12px;

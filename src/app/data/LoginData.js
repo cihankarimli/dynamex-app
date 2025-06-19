@@ -2,6 +2,7 @@ const loginData = [
   {
     id: 1,
     type: "email",
+    name: "login-input",
     label: "Email",
     placeHolder: "Email",
     name: "email",
@@ -12,6 +13,7 @@ const loginData = [
   {
     id: 2,
     type: "password",
+    name: "login-input",
     label: "Parol",
     placeHolder: "Şifrə",
     name: "password",

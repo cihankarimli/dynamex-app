@@ -1,0 +1,359 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+/* Main Container */
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  width: 100%;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.title p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Register Form Container */
+.register-form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Left Side - Form */
+.register-input {
+  padding: 40px;
+}
+
+.register-input h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Login Container (Form) */
+.login-container {
+  width: 100%;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form Input Groups */
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-input label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-input input {
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-input input:focus {
+  outline: none;
+  border-color: #ff4757;
+  box-shadow: 0 0 0 3px rgba(255, 71, 87, 0.1);
+}
+
+.form-input input::placeholder {
+  color: #aaa;
+}
+
+/* Input Error States */
+.form-input input:invalid {
+  border-color: #ff4757;
+}
+
+.form-input input:invalid + .validation-error {
+  display: block;
+}
+
+/* Validation Error Messages */
+.validation-error {
+  display: none;
+  color: #ff4757;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/* Special Styling for Select-like Inputs */
+.form-input input[name="citizenship"],
+.form-input input[name="city"],
+.form-input input[name="branch"] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Phone Number Input with Country Code */
+.phone-input-container {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-input-container select {
+  padding: 12px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  min-width: 80px;
+}
+
+.phone-input-container input {
+  flex: 1;
+}
+
+/* Date Input Styling */
+.form-input input[type="date"] {
+  position: relative;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-right: 40px;
+}
+
+/* ID Number and PIN Inputs */
+.form-input input[name="idNumber"],
+.form-input input[name="pin"] {
+  font-family: "Courier New", monospace;
+  letter-spacing: 1px;
+}
+
+/* Email Input */
+.form-input input[type="email"] {
+  background-color: #f8f9fa;
+}
+
+/* Password Inputs */
+
+/* Checkbox Container */
+.checkbox-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff4757;
+}
+
+.checkbox-container label {
+  font-size: 0.9rem;
+  color: #666;
+  cursor: pointer;
+}
+
+/* Submit Button */
+.login-button {
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #ff4757 0%, #ff3742 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #ff3742 0%, #ff2937 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 71, 87, 0.3);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* Right Side - Image Section */
+.register-image {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3e%3cpath d='M0 0h100v100H0z' fill='none'/%3e%3cpath d='M20 20h60v60H20z' fill='%23ffffff' fill-opacity='0.1'/%3e%3c/svg%3e")
+    repeat;
+  opacity: 0.1;
+}
+
+.register-image h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  color: #333;
+}
+
+.register-image img {
+  position: relative;
+  z-index: 1;
+  border-radius: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .register-form-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .register-input,
+  .register-image {
+    padding: 30px;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+
+  .register-image h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .form-container {
+    padding: 10px;
+  }
+
+  .register-input,
+  .register-image {
+    padding: 20px;
+  }
+  .register-image {
+    opacity: 0;
+  }
+  .title h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-input {
+    gap: 15px;
+  }
+
+  .phone-input-container {
+    flex-direction: column;
+  }
+}
+
+/* Loading States */
+.form-input input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.login-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Focus Visible for Accessibility */
+.form-input input:focus-visible,
+.login-button:focus-visible,
+.checkbox-container input:focus-visible {
+  outline: 2px solid #ff4757;
+  outline-offset: 2px;
+}
+
+/* Additional Styling for Better UX */
+.form-input input:valid {
+  border-color: #28a745;
+}
+
+.form-input input:valid:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+/* Success Message Styling */
+.success-message {
+  color: #28a745;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.form-input input:valid + .success-message {
+  display: block;
+}
