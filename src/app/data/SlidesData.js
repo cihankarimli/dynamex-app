@@ -1,7 +1,7 @@
 const slidesData = [
   {
     id: 1,
-    title: "Salam Seva",
+    title: "Çindən Çatdırılma Tariflərini ENDİRDİK!",
     content:
       "Çindən serfeli  sifaris axtaranlar ucun Dynamex yeni tarifler teqdim edir",
     bgClass: "slide1",
@@ -10,7 +10,7 @@ const slidesData = [
   },
   {
     id: 2,
-    title: "Artiq her oglanan qucaqlasma",
+    title: "Dynamex-in Çin anbarı artıq fəaliyyətdədir.",
     content:
       "Çindən serfeli  sifaris axtaranlar ucun Dynamex yeni tarifler teqdim edir",
     bgClass: "slide2",
@@ -19,7 +19,7 @@ const slidesData = [
   },
   {
     id: 3,
-    title: "Bu hec zor bir sey deyil",
+    title: "Başqalarının üstünlüyü bizim standartımızdır",
     content:
       "Çindən serfeli  sifaris axtaranlar ucun Dynamex yeni tarifler teqdim edir",
     bgClass: "slide3",
