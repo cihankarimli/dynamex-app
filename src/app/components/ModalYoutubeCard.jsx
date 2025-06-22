@@ -1,5 +1,6 @@
 import React from "react";
 import YoutubeData from "../data/youtubeSectionData";
+import "../styles/modalYoutubeCard.css";
 
 function ModalYoutubeCard({ videoId, onClose }) {
   const selectedVideo = YoutubeData.find((card) => card.id === videoId);
