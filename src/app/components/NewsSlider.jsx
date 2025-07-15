@@ -1,7 +1,7 @@
 "use client";
 import styles from "../styles/NewsSection.module.css";
 import React from "react";
-import News from "../data/news.js";
+import News from "../data/news";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
