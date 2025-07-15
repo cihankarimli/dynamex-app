@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import aboutData from "../data/AboutData";
+import aboutData from "../data/aboutData";
 import styles from "../styles/AboutPage.css";
 
 function About() {
