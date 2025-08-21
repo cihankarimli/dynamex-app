@@ -63,14 +63,7 @@ function Navbar() {
                 Tariflər
               </Link>
             </li>
-            <li>
-              <Link
-                href="/blog"
-                style={isActive("/blog") ? { color: "#fd475d" } : {}}
-              >
-                Mağazalar
-              </Link>
-            </li>
+
             <li>
               <Link
                 href="/faq"
