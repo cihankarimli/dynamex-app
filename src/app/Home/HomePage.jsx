@@ -16,6 +16,7 @@ function HomePage() {
       <NewsSection />
       <YoutubeSection />
       <BrandCarousel />
+      salam
     </>
   );
 }
