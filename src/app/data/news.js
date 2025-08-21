@@ -1,4 +1,4 @@
-const news = [
+const News = [
   {
     id: 1,
     title: "Sizi digerlerinden fərqləndirən xos etirler",
@@ -32,4 +32,4 @@ const news = [
     image: "/Turkiyeden-metbex.png",
   },
 ];
-export default news;
+export default News;
