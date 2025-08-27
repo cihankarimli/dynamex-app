@@ -1,9 +1,5 @@
 import Image from "next/image";
 import React from "react";
-// Bu üsullardan birini yoxlayın:
-
-// Üsul 1: Default import
-
 import styles from "../styles/AboutPage.css";
 const aboutData = [
   {

@@ -1,0 +1,74 @@
+.brand-carousel {
+  width: 60%;
+  background-color: white;
+  padding: 42px 0;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0;
+}
+
+.carousel-wrapper {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;
+}
+
+.brand-item {
+  flex-shrink: 0;
+  margin: 0 32px;
+  text-align: center;
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0 12px 30px 0 rgba(44, 44, 81, 0.08);
+  background-color: #ffffff;
+}
+
+.brand-logo {
+  font-size: 16px;
+  font-weight: 500;
+  color: #9ca3af;
+  border-radius: 50%;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.brand-n11 {
+  width: 48px;
+  height: 48px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.brand-n11:hover {
+  background-color: #dc2626;
+}
+
+/* Sonsuz scroll effekti */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

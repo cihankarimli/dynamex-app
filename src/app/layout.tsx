@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import FooterDynamex from "./components/FooterDynamex";
-
+import { SmoothScrollProvider } from "@/smoothScrool/SmoothScrool";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
- <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-  <body>
-    <Navbar />
-    {children}
-    <FooterDynamex/>
-    </body>
-    </html >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
+        <SmoothScrollProvider>
+          <Navbar />
+          {children}
+          <FooterDynamex />
+        </SmoothScrollProvider>
+      </body>
+    </html>
   );
 }

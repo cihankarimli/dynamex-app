@@ -1,0 +1,26 @@
+ [
+  {
+    "id": 1,
+    "workText": "MARKETING"
+  },
+  {
+    "id": 2,
+    "workText": "WEPSITE DESIGN"
+  },
+  {
+    "id": 3,
+    "workText": "BRANDING"
+  },
+  {
+    "id": 4,
+    "workText": "WEPSITE DEVELOPMENT"
+  },
+  {
+    "id": 5,
+    "workText": "MOBILE APP DEVELOPMENT"
+  },
+  {
+    "id": 6,
+    "workText": "DIGITAL"
+  }
+]
