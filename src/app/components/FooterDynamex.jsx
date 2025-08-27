@@ -30,7 +30,6 @@ function FooterDynamex() {
             </p>
           </div>
 
-          {/* Menu Section */}
           <div className="footer-section">
             <h3 className="footer-title">Menu</h3>
             <ul className="footer-links">
@@ -67,7 +66,6 @@ function FooterDynamex() {
             </ul>
           </div>
 
-          {/* Help Section */}
           <div className="footer-section">
             <h3 className="footer-title">Kömək</h3>
             <ul className="footer-links">
@@ -99,7 +97,6 @@ function FooterDynamex() {
             </ul>
           </div>
 
-          {/* Contact Section */}
           <div className="footer-section footer-contact">
             <h3 className="footer-title">Əlaqə</h3>
             <div className="contact-info">

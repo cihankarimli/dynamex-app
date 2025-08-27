@@ -87,7 +87,6 @@ const ShippingCalculator = () => {
           </div>
         </div>
 
-        {/* Height and Weight */}
         <div className="shipping-calculator-form-row">
           <div className="shipping-calculator-form-group">
             <label className="shipping-calculator-label">Hündürlük</label>

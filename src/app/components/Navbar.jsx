@@ -25,7 +25,6 @@ function Navbar() {
     <>
       <div className="navbar">
         <div className="navbar-container">
-          {/* Logo */}
           <div className="navbar-logo">
             <Link href="/">
               <Image
@@ -37,7 +36,6 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation Links */}
           <ul className="navbar-menu">
             <li>
               <Link

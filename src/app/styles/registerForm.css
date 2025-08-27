@@ -129,7 +129,6 @@ body {
   margin-top: 4px;
 }
 
-/* Special Styling for Select-like Inputs */
 .form-input input[name="citizenship"],
 .form-input input[name="city"],
 .form-input input[name="branch"] {

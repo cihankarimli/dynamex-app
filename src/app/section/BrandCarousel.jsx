@@ -1,5 +1,3 @@
-// components/BrandCarousel.js
-
 import React from "react";
 import "../styles/Carousel.css";
 import Image from "next/image";
@@ -19,7 +17,6 @@ function BrandCarousel() {
       <div className="carousel-container">
         <div className="carousel-wrapper">
           <div className="carousel-content">
-            {/* Sonsuz effekt üçün array-i iki dəfə yazırıq */}
             {[...brands, ...brands].map((brand, index) => (
               <div key={index} className="brand-item">
                 {brand.isSpecial ? (

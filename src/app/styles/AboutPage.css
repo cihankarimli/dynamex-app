@@ -94,7 +94,6 @@
   margin-bottom: 0;
 }
 
-/* Responsive Design */
 @media (max-width: 992px) {
   .about-container {
     padding: 40px 20px;

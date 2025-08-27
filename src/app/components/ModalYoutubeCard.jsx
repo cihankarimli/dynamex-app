@@ -37,7 +37,6 @@ function ModalYoutubeCard({ videoId, onClose }) {
           overflow: "hidden",
         }}
       >
-        {/* Close button */}
         <button
           onClick={onClose}
           style={{
@@ -82,8 +81,6 @@ function ModalYoutubeCard({ videoId, onClose }) {
             allowFullScreen
           />
         </div>
-
-        {/* Video title */}
       </div>
     </div>
   );
