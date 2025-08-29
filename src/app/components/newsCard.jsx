@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import NewsData from "../data/NewsData";
 import Image from "next/image";
-import Loading from "../components/Loading";
+import Loading from "../components/loading/Loading";
 
 function newsCard({ Selectoption }) {
   const [currentData, setCurrentData] = useState([]);
