@@ -13,7 +13,7 @@ export default function ContactSelect({ contactData: initialData }) {
       const fetchContacts = async () => {
         setLoading(true);
         try {
-          const res = await fetch("/api/contacts"); // əgər client-side fetch lazım olsa
+          const res = await fetch("/contacts");
           const contacts = await res.json();
           setContactData(contacts);
           setSelectedCity(contacts[0] || null);

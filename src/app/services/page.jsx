@@ -1,8 +1,16 @@
 import React from "react";
 import ServicesCard from "../components/ServicesCard";
 import "../styles/ServicesPage.css";
+import { fetchServices } from "../../fetch/services";
 
-function page() {
+export default async function page() {
+  let servicesData = [];
+  try {
+    servicesData = await fetchServices();
+  } catch (err) {
+    console.error("Xidmət məlumatını yükləyərkən xəta:", err);
+  }
+  console.log(servicesData);
   return (
     <>
       <div className="head-line">
@@ -12,9 +20,7 @@ function page() {
           tələsin!
         </p>
       </div>
-      <ServicesCard />
+      <ServicesCard servicesData={servicesData} />
     </>
   );
 }
-
-export default page;

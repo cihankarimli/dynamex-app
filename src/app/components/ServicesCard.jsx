@@ -1,14 +1,20 @@
 import React from "react";
-import ServicesData from "../data/ServicesData";
+
 import Image from "next/image";
 
-function ServicesCard() {
+function ServicesCard({ servicesData }) {
+  console.log(servicesData);
   return (
     <div className="card-container">
-      {ServicesData.map((card) => (
+      {servicesData.map((card) => (
         <div key={card.id} className="card">
           <div className="card-image">
-            <Image src={card.image} alt={card.title} width={70} height={70} />
+            <Image
+              src="/cb4fa7ca6054ec0cae0f54b1b188a471ef15c720.gif"
+              alt={card.title}
+              width={80}
+              height={80}
+            />
           </div>
           <div className="card-content">
             <h5>{card.title}</h5>
