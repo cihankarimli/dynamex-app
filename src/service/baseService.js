@@ -16,17 +16,16 @@ class ApiService {
 
       const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
       const result = await response.json();
 
-      if (result.success) {
-        return result.data;
-      } else {
-        throw new Error(result.error || "Xəta baş verdi");
+      if (!response.ok) {
+        throw new Error(
+          result.message || `HTTP error! status: ${response.status}`
+        );
       }
+
+      // Backend həm success: true həm data qaytarır
+      return result;
     } catch (error) {
       console.error(`API xətası [${method} ${endpoint}]:`, error);
       throw error;

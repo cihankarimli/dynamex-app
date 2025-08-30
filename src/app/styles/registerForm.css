@@ -10,6 +10,14 @@ body {
   background-color: white;
   color: #333;
 }
+.register-container {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 
 /* Main Container */
 .form-container {
@@ -18,7 +26,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 100px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -78,6 +86,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: 10px;
 }
 
 /* Form Input Groups */

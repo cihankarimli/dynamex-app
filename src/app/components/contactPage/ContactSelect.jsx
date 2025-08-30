@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import ContactDetails from "./ContactDetails";
-import Loading from "../loading/Loading";
+import Loading from "@/app/hooks/LoadingPage";
 
 export default function ContactSelect({ contactData: initialData }) {
   const [contactData, setContactData] = useState(initialData || []);
