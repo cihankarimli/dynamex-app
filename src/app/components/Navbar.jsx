@@ -4,10 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import "../styles/Navbar.css";
 import { usePathname } from "next/navigation";
-import { color } from "framer-motion";
+import { useEffect } from "react";
+
+import AuthService from "../../service/auth";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [IsAuthenticated, setIsAuthenticated] = useState(false);
+  const [userName, setuserName] = useState(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -16,10 +20,34 @@ function Navbar() {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
   const pathname = usePathname();
   const isActive = (path) => {
     return pathname === path ? "active" : "";
   };
+
+  useEffect(() => {
+    const checkAuth = () => {
+      const isAuth = AuthService.isAuthenticated();
+      const userName = AuthService.getUser()?.username || "İstifadəçi";
+
+      setIsAuthenticated(isAuth);
+      setuserName(userName);
+    };
+
+    checkAuth();
+
+    // Storage dəyişikliklərini dinlə (digər tab-larda login/logout olduqda)
+    const handleStorageChange = () => {
+      checkAuth();
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
 
   return (
     <>
@@ -61,7 +89,6 @@ function Navbar() {
                 Tariflər
               </Link>
             </li>
-
             <li>
               <Link
                 href="/faq"
@@ -90,7 +117,7 @@ function Navbar() {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  xmlns="http://www.w3.orgorg/2000/svg"
+                  xmlns="http://www.w3.org/2000/svg" // ✅ Düzəldildi
                 >
                   <path
                     d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V16.5M9 19.5C9.8 19.5 10.5 20.2 10.5 21S9.8 22.5 9 22.5 7.5 21.8 7.5 21 8.2 19.5 9 19.5ZM20 19.5C20.8 19.5 21.5 20.2 21.5 21S20.8 22.5 20 22.5 18.5 21.8 18.5 21 19.2 19.5 20 19.5Z"
@@ -104,10 +131,24 @@ function Navbar() {
               </div>
             </Link>
 
-            {/* Login Button */}
-            <Link href="/login">
-              <button className="login-btn">Daxil ol</button>
-            </Link>
+            {/* Authentication conditional rendering */}
+            {IsAuthenticated && userName ? (
+              <Link href="/dashboard">
+                <button className="profile-button">
+                  <Image
+                    src="/profileIcon.png"
+                    width={60}
+                    height={60}
+                    alt="profile-icon"
+                  />
+                  <p>{userName}</p>
+                </button>
+              </Link>
+            ) : (
+              <Link href="/login">
+                <button className="login-btn">Daxil ol</button>
+              </Link>
+            )}
 
             {/* Hamburger Menu */}
             <div className="hamburger" onClick={toggleMenu}>
@@ -148,9 +189,23 @@ function Navbar() {
           </div>
           <ul className="mobile-menu-list">
             <li>
-              <Link href="/login">
-                <button className="login-btn">Daxil ol</button>
-              </Link>
+              {IsAuthenticated && userName ? (
+                <Link href="/dashboard" onClick={closeMenu}>
+                  <button className="profile-button">
+                    <Image
+                      src="/profileIcon.png"
+                      width={40}
+                      height={40}
+                      alt="profile-icon"
+                    />
+                    <span>{userName}</span>
+                  </button>
+                </Link>
+              ) : (
+                <Link href="/login">
+                  <button className="login-btn">Daxil ol</button>
+                </Link>
+              )}
             </li>
             <li>
               <Link href="/about" onClick={closeMenu}>
@@ -187,7 +242,6 @@ function Navbar() {
                 Səbət
               </Link>
             </li>
-            <li></li>
           </ul>
         </div>
 

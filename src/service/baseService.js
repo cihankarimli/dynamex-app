@@ -1,3 +1,4 @@
+// service/baseService.js
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 class ApiService {
@@ -15,7 +16,6 @@ class ApiService {
       }
 
       const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
-
       const result = await response.json();
 
       if (!response.ok) {
@@ -24,8 +24,8 @@ class ApiService {
         );
       }
 
-      // Backend həm success: true həm data qaytarır
-      return result;
+      // Backend cavabında data field-ini qaytarın
+      return result.data || result;
     } catch (error) {
       console.error(`API xətası [${method} ${endpoint}]:`, error);
       throw error;

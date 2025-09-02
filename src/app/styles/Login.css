@@ -48,6 +48,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .login-input h3 {
@@ -125,6 +126,11 @@
   align-items: center;
   margin: 15px 0;
   gap: 8px;
+}
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .checkbox-container input[type="checkbox"] {

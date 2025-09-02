@@ -5,6 +5,7 @@ import { FormInput } from "../components/FormInput";
 import AuthService from "../../service/auth";
 import "../styles/registerForm.css";
 import Image from "next/image";
+import Loading from "../hooks/LoadingPage";
 
 function RegisterInput() {
   const [formData, setFormData] = useState({});
@@ -33,14 +34,15 @@ function RegisterInput() {
       if (response.token) {
         AuthService.setToken(response.token);
       }
+      // İstifadəçi məlumatlarını saxla
+      if (response.user) {
+        AuthService.setUser({
+          name: response.user.username,
+          surname: response.user.userSurname,
+          email: response.user.email,
+        });
+      }
 
-      setSuccess(
-        `Qeydiyyat uğurlu! Xoş gәldin, ${
-          response.user?.username || "istifadәçi"
-        }!`
-      );
-
-      // Form-u tәmizlә
       setFormData({});
 
       // 2 saniyә sonra dashboard-a yönlәndir
@@ -112,7 +114,7 @@ function RegisterInput() {
             cursor: loading ? "not-allowed" : "pointer",
           }}
         >
-          {loading ? "⏳ Yüklәnir..." : "Qeydiyyatdan keç"}
+          {loading ? <Loading /> : "Qeydiyyat"}
         </button>
       </form>
       <div className="register-image">

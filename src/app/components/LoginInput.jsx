@@ -7,7 +7,6 @@ import LoginData from "../data/LoginData";
 import { FormInput } from "./FormInput";
 
 function LoginInput() {
-  // State-lər
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -18,14 +17,12 @@ function LoginInput() {
 
   const router = useRouter();
 
-  // Form input dəyişikliyi
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
-    // Xəta mesajını təmizlə
     if (error) setError("");
   };
 
@@ -53,7 +50,7 @@ function LoginInput() {
         }
 
         // Ana səhifəyə yönləndir
-        router.push("/dashboard"); // və ya hansı səhifə istəyirsən
+        router.push("/dashboard");
       }
     } catch (error) {
       console.error("❌ Login xətası:", error);

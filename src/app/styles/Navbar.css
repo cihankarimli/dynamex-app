@@ -24,6 +24,18 @@
   margin-left: 200px;
   margin-top: 20px;
 }
+.profile-button {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: solid 1px #ffffff;
+  background-color: #ffffff;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
 
 .navbar-logo img {
   transition: transform 0.3s ease;

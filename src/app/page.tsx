@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import HomePage from './Home/HomePage';
 import './globals.css';
